@@ -5,7 +5,6 @@
   "env": {
   },
   "addons": [
-    "heroku-postgresql"
   ],
   "buildpacks": [
     {
