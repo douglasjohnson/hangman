@@ -1,0 +1,15 @@
+{
+  "name": "hangman",
+  "scripts": {
+  },
+  "env": {
+  },
+  "addons": [
+    "heroku-postgresql"
+  ],
+  "buildpacks": [
+    {
+      "url": "urn:buildpack:heroku/java"
+    }
+  ]
+}
