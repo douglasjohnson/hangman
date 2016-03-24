@@ -1,0 +1,121 @@
+/* Instructions */
+.instructions {
+    margin: 5px 0px;
+}
+
+/* Validation */
+.error {
+    color: red;
+}
+
+
+/* Guess characters */
+.guessCharacters {
+    margin-bottom: 5px;
+}
+.guessCharacters > form {
+    display: inline-block;
+    margin-bottom: 5px;
+}
+.guessCharacter {
+    width: 25pt;
+    font-size: large;
+    border-radius: 5px;
+    background-color: #0099cc;
+    color: white;
+    text-align: center;
+}
+.guessCharacter:disabled {
+    background-color: buttonface;
+    color: graytext;
+}
+.correctGuessCharacter, .correctGuessCharacter:disabled {
+    background-color: #007ba3;
+    color: white;
+}
+.incorrectGuessCharacter, .incorrectGuessCharacter:disabled {
+    background-color: red;
+    color: white;
+    text-decoration: line-through;
+}
+
+
+/* Revealed answer */
+.revealedAnswer {
+
+}
+.revealedAnswerCharacter {
+    width: 25pt;
+    height: 25pt;
+    margin-bottom: 5px;
+    font-size: x-large;
+    text-align: center;
+    text-transform: uppercase;
+}
+.revealedAnswerCharacterShown {
+    border-color: transparent;
+}
+.revealedAnswerCharacterHidden {
+
+}
+
+
+/* gallows */
+.gallows {
+    margin: 10px 50px;
+    font-size: x-large;
+    font-weight: bold;
+}
+.gallows > pre {
+    margin: 0px;
+}
+
+
+/* Message */
+.message {
+    margin: 5px 0px;
+}
+
+
+/* Play again */
+.playAgain {
+    width: 100%;
+    font-size: large;
+    margin-top: 5px;
+    border-radius: 5px;
+    background-color: #0099cc;
+    color: #ffffff;
+}
+
+
+.guessAnswer {
+    width: 100%;
+    font-size: x-large;
+    margin-top: 5px;
+    border-radius: 5px;
+    background-color: #0099cc;
+    color: #ffffff;
+}
+.guessAnswer:disabled {
+    background-color: buttonface;
+    color: graytext;
+}
+
+
+/* Answer */
+.txtAnswer {
+    margin-bottom: 5px;
+    font-size: x-large;
+}
+.btnAnswer {
+    width: 100%;
+    font-size: large;
+    margin-top: 5px;
+    border-radius: 5px;
+    background-color: #0099cc;
+    color: #ffffff;
+}
+
+input {
+    -webkit-appearance: none;
+}
