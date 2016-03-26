@@ -119,3 +119,8 @@
 input {
     -webkit-appearance: none;
 }
+
+/* Dialog */
+.dialog-confirm {
+    display: none
+}

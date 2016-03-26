@@ -5,48 +5,22 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Play Game</title>
-<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.js"></script>
-<script type="text/javascript" src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.2.0/require.min.js"></script>
 <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/vader/jquery-ui.min.css"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="<c:url value="/resources/css/hangman.css" />" rel="stylesheet">
 <script>
-$(document).ready(function () {
-    var dialogId = "dialog-confirm";
-    var dialog = $("#" + dialogId).dialog({
-        resizable: false,
-        modal: true,
-        autoOpen: false,
-        buttons: {
-            Yes: function() {
-                location.href = '<c:url value="/"/>';
-            },
-            No: function() {
-                dialog.close();
-            }
-        }
-    }).dialog("instance");
-    $("#btnPlayAgain").click(function() {
-        if (${hangman.gameInProgress}) {
-            dialog.open();
-        } else {
-            location.href = '<c:url value="/"/>';
-        }
-    });
-
-    function answerComplete() {
-        var emptyInputs = $("#revealedAnswer > input").filter(function() {
-            return $(this).val() === "";
-        });
-        return emptyInputs.length === 0;
-    };
-    
-    $("#btnGuessAnswer").click(function() {
-        var isComplete = answerComplete();
-        if (!isComplete) {
-            $("#message").text("Guessed answer is incomplete");
-        }
-        return isComplete;
+require.config({
+    paths : {
+        jquery : "//code.jquery.com/jquery-1.11.3",
+        jqueryui : "//code.jquery.com/ui/1.11.4/jquery-ui.min",
+        Hangman : "<c:url value='/resources/js/hangman' />"
+    }
+});
+require(["Hangman"], function (Hangman) {
+    new Hangman({
+        gameInProgress : ${hangman.gameInProgress},
+        newGameUrl : "<c:url value='/'/>"
     });
 });
 </script>
@@ -132,6 +106,6 @@ $(document).ready(function () {
     </form>
     <input id="btnPlayAgain" type="button" value="Play Again" class="playAgain"/>
     <div id="message" class="message">${message}</div>
-    <div id="dialog-confirm"><p>Are you sure you want to abandon this game?</p></div>
+    <div id="dialog-confirm" class="dialog-confirm"><p>Are you sure you want to abandon this game?</p></div>
 </body>
 </html>
