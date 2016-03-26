@@ -119,6 +119,7 @@
                     <systemPropertyVariables>
                         <phantomjs.binary.path>${phantomjs.binary}</phantomjs.binary.path>
                     </systemPropertyVariables>
+                    <useManifestOnlyJar>false</useManifestOnlyJar>
                 </configuration>
                 <executions>
                     <execution>
