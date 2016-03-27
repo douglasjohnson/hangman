@@ -8,13 +8,13 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.2.0/require.min.js"></script>
 <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/vader/jquery-ui.min.css"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="<c:url value="/resources/css/hangman.css" />" rel="stylesheet">
+<link href="<c:url value="/css/hangman.css" />" rel="stylesheet">
 <script>
 require.config({
     paths : {
         jquery : "//code.jquery.com/jquery-1.11.3",
         jqueryui : "//code.jquery.com/ui/1.11.4/jquery-ui.min",
-        Hangman : "<c:url value='/resources/js/hangman' />"
+        Hangman : "<c:url value='/js/hangman' />"
     }
 });
 require(["Hangman"], function (Hangman) {
@@ -51,7 +51,7 @@ require(["Hangman"], function (Hangman) {
             </form>
         </c:forEach>
     </div>
-    <div id="gallows" class=gallows"">
+    <div id="gallows" class="gallows">
         <c:set var="headLine" scope="page" value=" |"/>
         <c:set var="torsoLine" scope="page" value=" |"/>
         <c:set var="legsLine" scope="page" value=" |"/>

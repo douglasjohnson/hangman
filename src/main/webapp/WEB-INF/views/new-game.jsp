@@ -6,7 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>New Game</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="<c:url value="/resources/css/hangman.css" />" rel="stylesheet">
+<link href="<c:url value="/css/hangman.css" />" rel="stylesheet">
 </head>
 <body>
     <div id="lblInstructions"  class="instructions">To start a new game, please enter the answer.</div>

@@ -1,6 +1,11 @@
-define([ 'jquery', 'jqueryui' ], function($) {
+/*global define */
+define([ "jquery", "jqueryui" ], function($) {
+    "use strict";
     var hangman = function(options) {
-        var dialogId = "dialog-confirm", dialog = $("#" + dialogId).dialog({
+        this.answerComplete = function(inputs) {
+            return inputs.length === 0;
+        };
+        var dialog = $("#dialog-confirm").dialog({
             resizable : false,
             modal : true,
             autoOpen : false,
@@ -20,15 +25,13 @@ define([ 'jquery', 'jqueryui' ], function($) {
                 location.href = options.newGameUrl;
             }
         });
-        function answerComplete() {
-            var emptyInputs = $("#revealedAnswer > input").filter(function() {
+        var getInputs = function() {
+            return $("#revealedAnswer > input").filter(function() {
                 return $(this).val() === "";
             });
-            return emptyInputs.length === 0;
-        }
-        ;
+        };
         $("#btnGuessAnswer").click(function() {
-            var isComplete = answerComplete();
+            var isComplete = answerComplete(getInputs());
             if (!isComplete) {
                 $("#message").text("Guessed answer is incomplete");
             }
