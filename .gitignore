@@ -12,3 +12,5 @@ buildNumber.properties
 /.project
 /phantomjsdriver.log
 /bin/
+/node/
+/node_modules/
