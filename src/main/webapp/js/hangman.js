@@ -1,7 +1,8 @@
 /*global define */
 define([ "jquery", "jqueryui" ], function($) {
     "use strict";
-    var hangman = function(options) {
+    return function(options) {
+        var hangman = this;
         this.answerComplete = function(inputs) {
             return inputs.length === 0;
         };
@@ -31,12 +32,11 @@ define([ "jquery", "jqueryui" ], function($) {
             });
         };
         $("#btnGuessAnswer").click(function() {
-            var isComplete = answerComplete(getInputs());
+            var isComplete = hangman.answerComplete(getInputs());
             if (!isComplete) {
                 $("#message").text("Guessed answer is incomplete");
             }
             return isComplete;
         });
     };
-    return hangman;
 });
