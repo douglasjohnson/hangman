@@ -7,9 +7,11 @@
     "karma-sinon": "~1.0.4",
     "karma-junit-reporter": "^0.4.1",
     "karma-requirejs": "^0.2.6",
+    "kamra-sinon": "~1.0.4",
     "karma-coverage": "^0.5.5",
     "phantomjs-prebuilt": "~2.1.7",
     "requirejs": "~2.2.0",
-    "jasmine-core": "~2.4.1"
+    "jasmine-core": "~2.4.1",
+    "sinon": "~1.17.3"
   }
 }
