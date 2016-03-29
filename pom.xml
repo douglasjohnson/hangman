@@ -20,7 +20,6 @@
         <phantomjs.driver.version>1.2.0</phantomjs.driver.version>
         <phantomjs.version>1.9.8</phantomjs.version>
         <java.version>1.8</java.version>
-        <sonar.host.url>${sonar.host.url}</sonar.host.url>
     </properties>
     <dependencies>
         <dependency>
