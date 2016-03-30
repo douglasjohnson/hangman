@@ -34,12 +34,13 @@ module.exports = function(config) {
     },
 
     junitReporter: {
-        outputDir : 'target/karma/junit/'
+        outputDir: 'target/karma/junit/'
     },
 
     coverageReporter: {
-        type : 'html',
-        dir : 'target/karma/coverage/'
+        dir: 'target/karma/coverage/',
+        type: 'lcov',
+        subdir: 'report-lcov'
     },
 
     // web server port
