@@ -56,7 +56,7 @@ public class HangmanController {
             String key = "revealedAnswerCharacter" + i;
 
             String guessedCharacter = parameters.get(key);
-            if (guessedCharacter.equals("/")) {
+            if ("/".equals(guessedCharacter)) {
                 guessedCharacter = " ";
             }
             guess.append(guessedCharacter);

@@ -1,6 +1,6 @@
 /* Instructions */
 .instructions {
-    margin: 5px 0px;
+    margin: 5px 0;
 }
 
 /* Validation */
@@ -41,9 +41,6 @@
 
 
 /* Revealed answer */
-.revealedAnswer {
-
-}
 .revealedAnswerCharacter {
     width: 25pt;
     height: 25pt;
@@ -55,9 +52,6 @@
 .revealedAnswerCharacterShown {
     border-color: transparent;
 }
-.revealedAnswerCharacterHidden {
-
-}
 
 
 /* gallows */
@@ -67,13 +61,13 @@
     font-weight: bold;
 }
 .gallows > pre {
-    margin: 0px;
+    margin: 0;
 }
 
 
 /* Message */
 .message {
-    margin: 5px 0px;
+    margin: 5px 0;
 }
 
 
