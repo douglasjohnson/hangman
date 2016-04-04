@@ -27,25 +27,25 @@ require(["Hangman"], function (Hangman) {
 </head>
 <body>
     <div id="lblInstructions" class="instructions">Guess a letter. When you're ready, guess the answer.</div>
-    <div id="guessCharacters" class="guessCharacters">
+    <div id="guessCharacters" class="guess-characters">
         <c:forEach var="guessCharacter" items="${guessCharacters}">
             <form method="post" action='<c:url value="/guess-character"/>'>
                 <c:choose>
                     <c:when test="${guessCharacter.guessed && !guessCharacter.incorrectlyGuessed}">
                         <input id="guessCharacter${guessCharacter.character}" type="button"
-                            value="${guessCharacter.character}" disabled class="guessCharacter correctGuessCharacter"/>
+                            value="${guessCharacter.character}" disabled class="guess-character correctGuessCharacter"/>
                     </c:when>
                     <c:when test="${guessCharacter.incorrectlyGuessed}">
                         <input id="guessCharacter${guessCharacter.character}" type="button"
-                            value="${guessCharacter.character}" disabled disabled class="guessCharacter incorrectGuessCharacter" style="text-decoration: line-through" />
+                            value="${guessCharacter.character}" disabled disabled class="guess-character incorrectGuessCharacter" style="text-decoration: line-through" />
                     </c:when>
                     <c:when test="${!hangman.gameInProgress}">
                         <input id="guessCharacter${guessCharacter.character}" type="button"
-                            value="${guessCharacter.character}" disabled class="guessCharacter"/>
+                            value="${guessCharacter.character}" disabled class="guess-character"/>
                     </c:when>
                     <c:otherwise>
                         <input id="guessCharacter${guessCharacter.character}" type="submit" name="guessCharacter"
-                            value="${guessCharacter.character}" class="guessCharacter"/>
+                            value="${guessCharacter.character}" class="guess-character"/>
                     </c:otherwise>
                 </c:choose>
             </form>

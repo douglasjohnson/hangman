@@ -10,14 +10,14 @@
 
 
 /* Guess characters */
-.guessCharacters {
+.guess-characters {
     margin-bottom: 5px;
 }
-.guessCharacters > form {
+.guess-characters > form {
     display: inline-block;
     margin-bottom: 5px;
 }
-.guessCharacter {
+.guess-character {
     width: 25pt;
     font-size: large;
     border-radius: 5px;
@@ -25,7 +25,7 @@
     color: white;
     text-align: center;
 }
-.guessCharacter:disabled {
+.guess-character:disabled {
     background-color: buttonface;
     color: graytext;
 }
