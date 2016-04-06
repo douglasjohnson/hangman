@@ -27,7 +27,7 @@
 }
 .guessCharacter:disabled {
     background-color: buttonface;
-    color: graytext;
+    color: #6d6d6d;
 }
 .correctGuessCharacter, .correctGuessCharacter:disabled {
     background-color: #007ba3;
@@ -92,7 +92,7 @@
 }
 .guessAnswer:disabled {
     background-color: buttonface;
-    color: graytext;
+    color: #6d6d6d;
 }
 
 
