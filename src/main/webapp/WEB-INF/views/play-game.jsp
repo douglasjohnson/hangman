@@ -33,11 +33,11 @@ require(["Hangman"], function (Hangman) {
                 <c:choose>
                     <c:when test="${guessCharacter.guessed && !guessCharacter.incorrectlyGuessed}">
                         <input id="guessCharacter${guessCharacter.character}" type="button"
-                            value="${guessCharacter.character}" disabled class="guess-character correctGuessCharacter"/>
+                            value="${guessCharacter.character}" disabled class="guess-character correct-guess-character"/>
                     </c:when>
                     <c:when test="${guessCharacter.incorrectlyGuessed}">
                         <input id="guessCharacter${guessCharacter.character}" type="button"
-                            value="${guessCharacter.character}" disabled disabled class="guess-character incorrectGuessCharacter" style="text-decoration: line-through" />
+                            value="${guessCharacter.character}" disabled disabled class="guess-character incorrect-guess-character" style="text-decoration: line-through" />
                     </c:when>
                     <c:when test="${!hangman.gameInProgress}">
                         <input id="guessCharacter${guessCharacter.character}" type="button"
@@ -88,23 +88,23 @@ require(["Hangman"], function (Hangman) {
 /_\</pre>
     </div>
     <form method="post" action='<c:url value="/guess-answer"/>'>
-        <div id="revealedAnswer" class="revealedAnswer">
+        <div id="revealedAnswer" class="revealed-answer">
             <c:forEach var="revealedAnswerCharacter" varStatus="revealedAnswerCharacterCount"
                 items="${revealedAnswerCharacters}">
                 <c:choose>
                     <c:when test="${revealedAnswerCharacter.isRevealed()}">
-                        <input name="revealedAnswerCharacter${revealedAnswerCharacterCount.index}" type="text" readonly value="${revealedAnswerCharacter.answerCharacter}" class="revealedAnswerCharacter revealedAnswerCharacterShown"/>
+                        <input name="revealedAnswerCharacter${revealedAnswerCharacterCount.index}" type="text" readonly value="${revealedAnswerCharacter.answerCharacter}" class="revealed-answer-character revealed-answer-character-shown"/>
                     </c:when>
                     <c:otherwise>
-                        <input name="revealedAnswerCharacter${revealedAnswerCharacterCount.index}" type="text" maxlength="1" class="revealedAnswerCharacter revealedAnswerCharacterHidden"/>
+                        <input name="revealedAnswerCharacter${revealedAnswerCharacterCount.index}" type="text" maxlength="1" class="revealed-answer-character revealed-answer-character-hidden"/>
                     </c:otherwise>
                 </c:choose>
             </c:forEach>
         </div>
-        <input id="btnGuessAnswer" class="guessAnswer" type="submit" value="Guess Answer"
+        <input id="btnGuessAnswer" class="guess-answer" type="submit" value="Guess Answer"
             <c:if test="${!hangman.gameInProgress}">disabled</c:if> />
     </form>
-    <input id="btnPlayAgain" type="button" value="Play Again" class="playAgain"/>
+    <input id="btnPlayAgain" type="button" value="Play Again" class="play-again"/>
     <div id="message" class="message">${message}</div>
     <div id="dialog-confirm" class="dialog-confirm"><p>Are you sure you want to abandon this game?</p></div>
 </body>

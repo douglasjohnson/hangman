@@ -11,8 +11,8 @@
 <body>
     <div id="lblInstructions"  class="instructions">To start a new game, please enter the answer.</div>
     <form method="post" action="<c:url value="/play-game"/>">
-        <input type="text" name="submittedAnswer" id="txtAnswerInput" class="txtAnswer" autofocus />
-        <input type="submit" id="btnAnswer" value="Play!" class="btnAnswer"/>
+        <input type="text" name="submittedAnswer" id="txtAnswerInput" class="text-answer" autofocus />
+        <input type="submit" id="btnAnswer" value="Play!" class="button-answer"/>
     </form>
     <c:if test="${validationMessageList.size() > 0}">
         <ul id="lblValidationMessage" class="error">

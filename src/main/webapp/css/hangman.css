@@ -29,11 +29,11 @@
     background-color: #f0f0f0;
     color: #6d6d6d;
 }
-.correctGuessCharacter, .correctGuessCharacter:disabled {
+.correct-guess-character, .correct-guess-character:disabled {
     background-color: #007ba3;
     color: white;
 }
-.incorrectGuessCharacter, .incorrectGuessCharacter:disabled {
+.incorrect-guess-character, .incorrect-guess-character:disabled {
     background-color: red;
     color: white;
     text-decoration: line-through;
@@ -41,7 +41,7 @@
 
 
 /* Revealed answer */
-.revealedAnswerCharacter {
+.revealed-answer-character {
     width: 25pt;
     height: 25pt;
     margin-bottom: 5px;
@@ -49,7 +49,7 @@
     text-align: center;
     text-transform: uppercase;
 }
-.revealedAnswerCharacterShown {
+.revealed-answer-character-shown {
     border-color: transparent;
 }
 
@@ -72,7 +72,7 @@
 
 
 /* Play again */
-.playAgain {
+.play-again {
     width: 100%;
     font-size: large;
     margin-top: 5px;
@@ -82,7 +82,7 @@
 }
 
 
-.guessAnswer {
+.guess-answer {
     width: 100%;
     font-size: x-large;
     margin-top: 5px;
@@ -90,18 +90,18 @@
     background-color: #0099cc;
     color: #ffffff;
 }
-.guessAnswer:disabled {
+.guess-answer:disabled {
     background-color: #f0f0f0;
     color: #6d6d6d;
 }
 
 
 /* Answer */
-.txtAnswer {
+.text-answer {
     margin-bottom: 5px;
     font-size: x-large;
 }
-.btnAnswer {
+.button-answer {
     width: 100%;
     font-size: large;
     margin-top: 5px;
