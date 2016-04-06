@@ -14,6 +14,7 @@ public class HangmanServiceImpl implements HangmanService {
     private String answer;
 
     public HangmanServiceImpl() {
+        //
     }
 
     @Override
