@@ -1,4 +1,4 @@
 # hangman
 
 Master
-[ ![Codeship Status for douglasjohnson/hangman](https://codeship.com/projects/d3f171d0-d487-0133-39b8-0af10aec3b5e/status?branch=master)](https://codeship.com/projects/142432)
+[ ![Teamcity Status for douglasjohnson/hangman](http://ec2-54-200-107-10.us-west-2.compute.amazonaws.com:8111/app/rest/builds/buildType:(id:Hangman_Build)/statusIcon)](http://ec2-54-200-107-10.us-west-2.compute.amazonaws.com:8111/viewType.html?buildTypeId=Hangman_Build)

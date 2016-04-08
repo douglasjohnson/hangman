@@ -1,5 +1,5 @@
 Feature: Hangman
-  @development
+
   @UI
   Scenario: Guess a correct letter
     Given I start a game of hangman with answer "diesel"
