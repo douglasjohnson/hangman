@@ -17,9 +17,9 @@ require.config({
   baseUrl: '/base',
 
   paths : {
-      jquery : "//code.jquery.com/jquery-1.11.3",
-      jqueryui : "//code.jquery.com/ui/1.11.4/jquery-ui.min",
-      sinon : "//cdnjs.cloudflare.com/ajax/libs/sinon.js/1.15.4/sinon.min",
+      jquery : "src/main/webapp/js/lib/jquery-1.12.3.min",
+      jqueryui : "src/main/webapp/js/lib/jquery-ui-1.11.4.min",
+      sinon : "src/test/webapp/js/lib/sinon-1.15.4.min",
       Hangman : "src/main/webapp/js/hangman"
   },
 
