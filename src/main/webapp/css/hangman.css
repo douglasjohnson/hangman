@@ -110,9 +110,6 @@
     color: #ffffff;
 }
 
-input {
-    -webkit-appearance: none;
-}
 
 /* Dialog */
 .dialog-confirm {
