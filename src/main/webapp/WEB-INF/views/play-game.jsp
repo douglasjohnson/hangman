@@ -3,12 +3,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Play Game</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <script type="text/javascript" src="<c:url value='/js/lib/require-2.2.0.min.js' />"></script>
-<link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/vader/jquery-ui.min.css"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="<c:url value="/css/hangman.css" />" rel="stylesheet">
+<link rel="stylesheet" href="<c:url value="/css/jquery-ui.min-1.11.4.css" />" />
+<link rel="stylesheet" href="<c:url value="/css/hangman.css" />" />
 <script>
 require.config({
     paths : {
