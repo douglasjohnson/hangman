@@ -11,7 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
-public class HangmanUINewGameStepDefinitions extends AbstractStepDefinitions {
+public class HangmanUINewGameStepDefinitions {
 
     private static final String ANSWER_BUTTON_ID = "btnAnswer";
     private static final String ANSWER_INPUT_ID = "txtAnswerInput";

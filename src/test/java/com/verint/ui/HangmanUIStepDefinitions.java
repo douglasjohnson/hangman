@@ -16,7 +16,7 @@ import cucumber.api.java.Before;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
-public class HangmanUIStepDefinitions extends AbstractStepDefinitions {
+public class HangmanUIStepDefinitions {
 
     private static final String INSTRUCTIONS_LABEL_ID = "lblInstructions";
 
