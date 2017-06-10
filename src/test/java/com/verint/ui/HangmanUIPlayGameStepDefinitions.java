@@ -22,7 +22,7 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
-public class HangmanUIPlayGameStepDefinitions {
+public class HangmanUIPlayGameStepDefinitions extends AbstractStepDefinitions {
 
     private static final String GUESS_CHARACTERS_CONTAINER_ID = "guessCharacters";
     private static final String GALLOWS_CONTAINER_ID = "gallows";

@@ -16,9 +16,11 @@ import cucumber.api.java.Before;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
-public class HangmanUIStepDefinitions {
+public class HangmanUIStepDefinitions extends AbstractStepDefinitions {
 
     private static final String INSTRUCTIONS_LABEL_ID = "lblInstructions";
+    private static final String HOST = System.getProperty("host", "localhost");
+    private static final String PORT = System.getProperty("port", "8080");
 
     private WebDriver driver;
 
@@ -38,7 +40,7 @@ public class HangmanUIStepDefinitions {
     }
 
     public void navigateToHangmanGame(WebDriver webDriver) {
-        webDriver.get("http://localhost:8080/Hangman");
+        webDriver.get("http://" + HOST + ":" + PORT + "/Hangman");
     }
 
     @When("^I tab$")
