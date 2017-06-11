@@ -401,6 +401,7 @@ Feature: Hangman
       | diesel/  |
       | die\\sel |
       |          |
+      | £diesel  |
 
   @UI
   Scenario: Guess a correct digit
