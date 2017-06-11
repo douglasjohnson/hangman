@@ -257,8 +257,6 @@
                                 <argument>com/verint/ui</argument>
                                 <argument>--tags</argument>
                                 <argument>@UI</argument>
-                                <argument>--tags</argument>
-                                <argument>@fast</argument>
                                 <argument>${project.basedir}/src/test/resources</argument>
                             </arguments>
                         </configuration>
