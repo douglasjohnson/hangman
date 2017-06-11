@@ -16,6 +16,8 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <cucumber.reports.directory>${project.build.directory}/cucumber-reports</cucumber.reports.directory>
+        <host>localhost</host>
+        <port>8080</port>
     </properties>
     <dependencies>
         <dependency>
@@ -238,6 +240,8 @@
                             <arguments>
                                 <argument>${jacoco.agent-integration}</argument>
                                 <argument>-Dphantomjs.binary.path=${phantomjs.binary}</argument>
+                                <argument>-Dhost=${host}</argument>
+                                <argument>-Dport=${port}</argument>
                                 <argument>-classpath</argument>
                                 <classpath/>
                                 <argument>cucumber.api.cli.Main</argument>
@@ -253,19 +257,13 @@
                                 <argument>com/verint/ui</argument>
                                 <argument>--tags</argument>
                                 <argument>@UI</argument>
+                                <argument>--tags</argument>
+                                <argument>@fast</argument>
                                 <argument>${project.basedir}/src/test/resources</argument>
                             </arguments>
                         </configuration>
                     </execution>
                 </executions>
-                <configuration>
-                    <systemProperties>
-                        <systemProperty>
-                            <key>phantomjs.binary.path</key>
-                            <value>${phantomjs.binary}</value>
-                        </systemProperty>
-                    </systemProperties>
-                </configuration>
             </plugin>
         </plugins>
     </build>
