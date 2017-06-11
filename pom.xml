@@ -13,6 +13,9 @@
     <properties>
         <cucumber.version>1.2.4</cucumber.version>
         <java.version>1.8</java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <cucumber.reports.directory>${project.build.directory}/cucumber-reports</cucumber.reports.directory>
     </properties>
     <dependencies>
         <dependency>
@@ -57,7 +60,7 @@
         </dependency>
         <dependency>
             <groupId>info.cukes</groupId>
-            <artifactId>cucumber-spring</artifactId>
+            <artifactId>cucumber-picocontainer</artifactId>
             <version>${cucumber.version}</version>
             <scope>test</scope>
         </dependency>
@@ -70,10 +73,6 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -110,24 +109,6 @@
                 <configuration>
                     <version>2.1.1</version>
                 </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-failsafe-plugin</artifactId>
-                <configuration>
-                    <systemPropertyVariables>
-                        <phantomjs.binary.path>${phantomjs.binary}</phantomjs.binary.path>
-                    </systemPropertyVariables>
-                    <useManifestOnlyJar>false</useManifestOnlyJar>
-                </configuration>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>integration-test</goal>
-                            <goal>verify</goal>
-                        </goals>
-                    </execution>
-                </executions>
             </plugin>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
@@ -176,7 +157,9 @@
                             <goal>prepare-agent</goal>
                         </goals>
                         <configuration>
-                            <destFile>${project.build.directory}/jacoco.exec</destFile>
+                            <propertyName>
+                                jacoco.agent
+                            </propertyName>
                         </configuration>
                     </execution>
                     <execution>
@@ -185,10 +168,6 @@
                         <goals>
                             <goal>report</goal>
                         </goals>
-                        <configuration>
-                            <dataFile>${project.build.directory}/jacoco.exec</dataFile>
-                            <outputDirectory>${project.reporting.outputDirectory}/jacoco</outputDirectory>
-                        </configuration>
                     </execution>
                     <execution>
                         <id>pre-integration-test</id>
@@ -197,7 +176,9 @@
                             <goal>prepare-agent</goal>
                         </goals>
                         <configuration>
-                            <destFile>${project.build.directory}/jacoco-it.exec</destFile>
+                            <propertyName>
+                                jacoco.agent-integration
+                            </propertyName>
                         </configuration>
                     </execution>
                     <execution>
@@ -206,12 +187,81 @@
                         <goals>
                             <goal>report</goal>
                         </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>cucumber-test</id>
+                        <phase>test</phase>
+                        <goals>
+                            <goal>exec</goal>
+                        </goals>
                         <configuration>
-                            <dataFile>${project.build.directory}/jacoco-it.exec</dataFile>
-                            <outputDirectory>${project.reporting.outputDirectory}/jacoco-it</outputDirectory>
+                            <executable>java</executable>
+                            <classpathScope>test</classpathScope>
+                            <arguments>
+                                <argument>${jacoco.agent}</argument>
+                                <argument>-classpath</argument>
+                                <classpath/>
+                                <argument>cucumber.api.cli.Main</argument>
+                                <argument>--plugin</argument>
+                                <argument>junit:${cucumber.reports.directory}/engine/cucumber.xml</argument>
+                                <argument>--plugin</argument>
+                                <argument>html:${cucumber.reports.directory}/engine/html</argument>
+                                <argument>--plugin</argument>
+                                <argument>pretty</argument>
+                                <argument>--strict</argument>
+                                <argument>--monochrome</argument>
+                                <argument>--glue</argument>
+                                <argument>com/verint/engine</argument>
+                                <argument>${project.basedir}/src/test/resources/Hangman.feature</argument>
+                            </arguments>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>cucumber-integration-test</id>
+                        <phase>integration-test</phase>
+                        <goals>
+                            <goal>exec</goal>
+                        </goals>
+                        <configuration>
+                            <executable>java</executable>
+                            <classpathScope>test</classpathScope>
+                            <arguments>
+                                <argument>${jacoco.agent-integration}</argument>
+                                <argument>-Dphantomjs.binary.path=${phantomjs.binary}</argument>
+                                <argument>-classpath</argument>
+                                <classpath/>
+                                <argument>cucumber.api.cli.Main</argument>
+                                <argument>--plugin</argument>
+                                <argument>junit:${cucumber.reports.directory}/application/cucumber.xml</argument>
+                                <argument>--plugin</argument>
+                                <argument>html:${cucumber.reports.directory}/application/html</argument>
+                                <argument>--plugin</argument>
+                                <argument>pretty</argument>
+                                <argument>--strict</argument>
+                                <argument>--monochrome</argument>
+                                <argument>--glue</argument>
+                                <argument>com/verint/ui</argument>
+                                <argument>--tags</argument>
+                                <argument>@UI</argument>
+                                <argument>${project.basedir}/src/test/resources</argument>
+                            </arguments>
                         </configuration>
                     </execution>
                 </executions>
+                <configuration>
+                    <systemProperties>
+                        <systemProperty>
+                            <key>phantomjs.binary.path</key>
+                            <value>${phantomjs.binary}</value>
+                        </systemProperty>
+                    </systemProperties>
+                </configuration>
             </plugin>
         </plugins>
     </build>
