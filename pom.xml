@@ -170,7 +170,7 @@
                     </execution>
                     <execution>
                         <id>post-unit-test</id>
-                        <phase>test</phase>
+                        <phase>post-unit-test</phase>
                         <goals>
                             <goal>report</goal>
                         </goals>
@@ -179,7 +179,7 @@
                         <id>pre-integration-test</id>
                         <phase>pre-integration-test</phase>
                         <goals>
-                            <goal>prepare-agent</goal>
+                            <goal>prepare-agent-integration</goal>
                         </goals>
                         <configuration>
                             <propertyName>
