@@ -1,4 +1,4 @@
-package com.verint.ui;
+package douglasjohnson.hangman.ui;
 
 import org.junit.Test;
 import org.springframework.boot.builder.SpringApplicationBuilder;

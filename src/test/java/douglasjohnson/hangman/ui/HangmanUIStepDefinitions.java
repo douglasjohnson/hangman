@@ -1,4 +1,4 @@
-package com.verint.ui;
+package douglasjohnson.hangman.ui;
 
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;

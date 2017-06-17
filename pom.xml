@@ -1,7 +1,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.verint</groupId>
+    <groupId>douglasjohnson.hangman</groupId>
     <artifactId>Hangman</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>war</packaging>
@@ -200,7 +200,7 @@
                                         <argument>--strict</argument>
                                         <argument>--monochrome</argument>
                                         <argument>--glue</argument>
-                                        <argument>com/verint/engine</argument>
+                                        <argument>douglasjohnson/hangman/engine</argument>
                                         <argument>${project.basedir}/src/test/resources/Hangman.feature</argument>
                                     </arguments>
                                 </configuration>
@@ -232,7 +232,7 @@
                                         <argument>--strict</argument>
                                         <argument>--monochrome</argument>
                                         <argument>--glue</argument>
-                                        <argument>com/verint/ui</argument>
+                                        <argument>douglasjohnson/hangman/ui</argument>
                                         <argument>--tags</argument>
                                         <argument>@UI</argument>
                                         <argument>${project.basedir}/src/test/resources</argument>
@@ -322,7 +322,7 @@
                                         <argument>--strict</argument>
                                         <argument>--monochrome</argument>
                                         <argument>--glue</argument>
-                                        <argument>com/verint/ui</argument>
+                                        <argument>douglasjohnson/hangman/ui</argument>
                                         <argument>--tags</argument>
                                         <argument>@UI</argument>
                                         <argument>${project.basedir}/src/test/resources</argument>
