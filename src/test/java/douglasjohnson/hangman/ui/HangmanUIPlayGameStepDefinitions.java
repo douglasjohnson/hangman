@@ -1,7 +1,6 @@
-package com.verint.ui;
+package douglasjohnson.hangman.ui;
 
-import static com.verint.ui.RevealedAnswerCharacterHiddenMatcher.hidden;
-import static com.verint.ui.WebElementReadOnlyAttributeMatcher.readonly;
+import static douglasjohnson.hangman.ui.WebElementReadOnlyAttributeMatcher.readonly;
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.not;
 import static org.hamcrest.Matchers.notNullValue;
@@ -132,7 +131,7 @@ public class HangmanUIPlayGameStepDefinitions extends AbstractStepDefinitions {
         WebElement revealedAnswerCharactersContainer = driver
                 .findElement(By.id(REVEALED_ANSWER_CHARACTERS_CONTAINER_ID));
         List<WebElement> revealedAnswerCharacters = revealedAnswerCharactersContainer.findElements(By.tagName("input"));
-        assertThat(revealedAnswerCharacters, are(all(hidden())));
+        assertThat(revealedAnswerCharacters, are(all(RevealedAnswerCharacterHiddenMatcher.hidden())));
     }
 
     @When("^I guess character \"([^\"]*)\"$")
@@ -198,7 +197,7 @@ public class HangmanUIPlayGameStepDefinitions extends AbstractStepDefinitions {
         WebElement revealedAnswerCharactersContainer = driver
                 .findElement(By.id(REVEALED_ANSWER_CHARACTERS_CONTAINER_ID));
         List<WebElement> revealedAnswerCharacters = revealedAnswerCharactersContainer.findElements(By.tagName("input"));
-        assertThat(revealedAnswerCharacters, atPositions(positionsString, are(hidden())));
+        assertThat(revealedAnswerCharacters, atPositions(positionsString, are(RevealedAnswerCharacterHiddenMatcher.hidden())));
     }
 
     public static <T> Matcher<T> are(Matcher<T> value) {

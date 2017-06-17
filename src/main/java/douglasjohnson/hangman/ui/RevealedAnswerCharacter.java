@@ -1,4 +1,4 @@
-package com.verint.ui;
+package douglasjohnson.hangman.ui;
 
 public class RevealedAnswerCharacter {
 

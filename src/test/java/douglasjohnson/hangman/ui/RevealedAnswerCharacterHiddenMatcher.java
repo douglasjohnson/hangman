@@ -1,4 +1,4 @@
-package com.verint.ui;
+package douglasjohnson.hangman.ui;
 
 import org.hamcrest.BaseMatcher;
 import org.hamcrest.Description;

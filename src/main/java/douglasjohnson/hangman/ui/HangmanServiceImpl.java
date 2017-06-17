@@ -1,10 +1,9 @@
-package com.verint.ui;
+package douglasjohnson.hangman.ui;
 
+import douglasjohnson.hangman.Hangman;
 import org.springframework.context.annotation.Scope;
 import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.stereotype.Service;
-
-import com.verint.Hangman;
 
 @Service
 @Scope(value = "session", proxyMode = ScopedProxyMode.INTERFACES)

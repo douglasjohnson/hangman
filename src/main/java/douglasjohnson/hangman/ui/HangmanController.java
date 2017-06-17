@@ -1,4 +1,4 @@
-package com.verint.ui;
+package douglasjohnson.hangman.ui;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -11,7 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.verint.Hangman;
+import douglasjohnson.hangman.Hangman;
 
 @Controller
 public class HangmanController {

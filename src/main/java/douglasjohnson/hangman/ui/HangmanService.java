@@ -1,6 +1,6 @@
-package com.verint.ui;
+package douglasjohnson.hangman.ui;
 
-import com.verint.Hangman;
+import douglasjohnson.hangman.Hangman;
 
 public interface HangmanService {
 

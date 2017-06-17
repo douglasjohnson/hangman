@@ -200,7 +200,7 @@
                                         <argument>--strict</argument>
                                         <argument>--monochrome</argument>
                                         <argument>--glue</argument>
-                                        <argument>com/verint/engine</argument>
+                                        <argument>douglasjohnson/hangman/engine</argument>
                                         <argument>${project.basedir}/src/test/resources/Hangman.feature</argument>
                                     </arguments>
                                 </configuration>
@@ -232,7 +232,7 @@
                                         <argument>--strict</argument>
                                         <argument>--monochrome</argument>
                                         <argument>--glue</argument>
-                                        <argument>com/verint/ui</argument>
+                                        <argument>douglasjohnson/hangman/ui</argument>
                                         <argument>--tags</argument>
                                         <argument>@UI</argument>
                                         <argument>${project.basedir}/src/test/resources</argument>
@@ -322,7 +322,7 @@
                                         <argument>--strict</argument>
                                         <argument>--monochrome</argument>
                                         <argument>--glue</argument>
-                                        <argument>com/verint/ui</argument>
+                                        <argument>douglasjohnson/hangman/ui</argument>
                                         <argument>--tags</argument>
                                         <argument>@UI</argument>
                                         <argument>${project.basedir}/src/test/resources</argument>

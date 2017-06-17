@@ -1,4 +1,4 @@
-package com.verint.ui;
+package douglasjohnson.hangman.ui;
 
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.SpringApplicationContextLoader;
