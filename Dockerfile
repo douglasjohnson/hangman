@@ -1,6 +1,6 @@
-FROM tomcat:alpine
+FROM openjdk:8-jre-alpine
 MAINTAINER douglasjohnson
 
-ADD Hangman.war /usr/local/tomcat/webapps/
+ADD Hangman.war /usr/local/
 
-CMD ["catalina.sh", "run"]
+CMD ["java", "-jar", "/usr/local/Hangman.war"]
